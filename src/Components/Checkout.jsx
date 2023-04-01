@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import CartContext from "../CartContext";
+import { FaTrashAlt } from "react-icons/fa";
 
 const Checkout = () => {
   const { items } = useContext(CartContext);
@@ -8,11 +9,14 @@ const Checkout = () => {
     <div>
       {items.map((item) => {
         return (
-          <div>
-            <img src={item.image} alt="" />
-            <h2>{item.title}</h2>
+          <div className="checkout products">
+            <div className="card">
+              <img src={item.image} alt="" />
+              <h2>{item.title}</h2>
 
-            <h3>${item.price}</h3>
+              <h3>${item.price}</h3>
+              <FaTrashAlt />
+            </div>
           </div>
         );
       })}

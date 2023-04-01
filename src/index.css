@@ -51,6 +51,10 @@ ul {
   padding: 10px;
   border-radius: 5px;
 }
+.card p{
+  height: 60px;
+  overflow-x: hidden;
+}
 .card img {
   object-fit: contain;
   width: 100%;
@@ -73,9 +77,22 @@ ul {
 }
 
 .btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--secondary);
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
+  padding: 10px;
   right: 50px;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 12px;
+}
+.checkout{
+  max-width: var(--view-width);
+
+}
+.checkout img{
+  width: 100%;
+  object-fit: contain;
 }

@@ -7,13 +7,15 @@ const Products = () => {
 
   useEffect(() => {
     const getProducts = async () => {
-      const phones = await fetch("https://dummyjson.com/products");
+      const phones = await fetch("https://fakestoreapi.com/products/");
       const data = await phones.json();
+      console.dir(data);
 
-      setPhones(data.products);
+      setPhones(data);
     };
     getProducts();
   }, []);
+  console.log(phones)
 
   return (
     <div className="product-page">
@@ -27,7 +29,7 @@ const Products = () => {
             return (
               <Card
                 key={phone.id}
-                image={phone.images[0]}
+                image={phone.image}
                 title={phone.title}
                 price={phone.price}
                 description={phone.description}
