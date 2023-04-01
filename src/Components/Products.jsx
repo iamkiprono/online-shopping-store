@@ -16,23 +16,26 @@ const Products = () => {
   }, []);
 
   return (
-    <div className="products">
-        <h2>Products</h2>
-      {!phones ? (
-        <Spinner />
-      ) : (
-        phones &&
-        phones.map((phone) => {
-          return (
-            <Card
-              image={phone.images[0]}
-              title={phone.title}
-              price={phone.price}
-              description={phone.description}
-            />
-          );
-        })
-      )}
+    <div className="product-page">
+      <h2>Products</h2>
+      <div className="products">
+        {!phones ? (
+          <Spinner />
+        ) : (
+          phones &&
+          phones.map((phone) => {
+            return (
+              <Card
+                key={phone.id}
+                image={phone.images[0]}
+                title={phone.title}
+                price={phone.price}
+                description={phone.description}
+              />
+            );
+          })
+        )}
+      </div>
     </div>
   );
 };
