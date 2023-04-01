@@ -17,6 +17,7 @@ const Products = () => {
 
   return (
     <div className="products">
+        <h2>Products</h2>
       {!phones ? (
         <Spinner />
       ) : (
@@ -27,6 +28,7 @@ const Products = () => {
               image={phone.images[0]}
               title={phone.title}
               price={phone.price}
+              description={phone.description}
             />
           );
         })
